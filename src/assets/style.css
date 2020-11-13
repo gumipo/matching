@@ -1,0 +1,18 @@
+button:hover {
+  opacity: 0.7;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+input::placeholder {
+  color: grey;
+  opacity: 0.4;
+}

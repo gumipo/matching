@@ -3,14 +3,14 @@ import { TextInput, PrimaryButton } from "../Components/UIkit";
 import ImageArea from "./ImageArea";
 import { db } from "../Firebase/index";
 
-const AddGirlesData = () => {
+const AddGirlsData = () => {
   const [name, setName] = useState(""),
     [description, setDescription] = useState(""),
     [age, setAge] = useState(""),
     [image, setImage] = useState(""),
-    [address, setAddress] = useState("");
+    [address, setAddress] = useState(""),
+    [level, setLevel] = useState("");
 
-  console.log(image);
   const inputName = useCallback(
     (event) => {
       setName(event.target.value);
@@ -39,11 +39,37 @@ const AddGirlesData = () => {
     [setAddress]
   );
 
+  const inputLevel = useCallback(
+    (event) => {
+      setLevel(event.target.value);
+    },
+    [setLevel]
+  );
+  const girlsRef = db.collection("girls");
+
+  const saveGirls = (name, description, age, image, address, level) => {
+    const data = {
+      image: image,
+      name: name,
+      age: age,
+      address: address,
+      description: description,
+      level: level,
+    };
+
+    girlsRef
+      .doc()
+      .set(data)
+      .catch((error) => {
+        throw new Error(error);
+      });
+  };
+
   return (
     <section>
       <h2>女この登録</h2>
       <div>
-        <ImageArea images={image} setImage={setImage} />
+        <ImageArea image={image} setImage={setImage} />
 
         <TextInput
           fullWidth={true}
@@ -54,6 +80,16 @@ const AddGirlesData = () => {
           value={name}
           type={"text"}
           onChange={inputName}
+        />
+        <TextInput
+          fullWidth={true}
+          label={"レベル"}
+          multiline={false}
+          required={true}
+          rows={1}
+          value={level}
+          type={"number"}
+          onChange={inputLevel}
         />
         <TextInput
           fullWidth={true}
@@ -75,7 +111,6 @@ const AddGirlesData = () => {
           type={"number"}
           onChange={inputAddress}
         />
-
         <TextInput
           fullWidth={true}
           label={"コメント"}
@@ -90,7 +125,9 @@ const AddGirlesData = () => {
         <div>
           <PrimaryButton
             label={"ガール登録"}
-            // onClick={() => saveGirls(name, description, age, image, address)}
+            onClick={() =>
+              saveGirls(name, description, age, image, address, level)
+            }
           />
         </div>
       </div>
@@ -98,4 +135,4 @@ const AddGirlesData = () => {
   );
 };
 
-export default AddGirlesData;
+export default AddGirlsData;

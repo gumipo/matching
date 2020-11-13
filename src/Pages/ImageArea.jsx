@@ -5,7 +5,16 @@ import { makeStyles } from "@material-ui/core";
 import { storage } from "../Firebase/index";
 import ImagePreview from "./ImagePreview";
 
+const useStyles = makeStyles({
+  icon: {
+    height: 48,
+    width: 48,
+  },
+});
+
 const ImageArea = (props) => {
+  const classes = useStyles();
+
   //画像の削除
   const deleteImage = useCallback(
     async (id) => {
@@ -55,14 +64,14 @@ const ImageArea = (props) => {
           <ImagePreview
             id={props.image.id}
             path={props.image.path}
+            key={props.image.id}
             delete={deleteImage}
           />
         )}
       </div>
-
       <div className="u-text-right">
         <span>商品画像を登録する</span>
-        <IconButton>
+        <IconButton className={classes.icon}>
           <label>
             <AddPhotoAlternateIcon />
             <input
