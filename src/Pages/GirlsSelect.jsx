@@ -17,14 +17,13 @@ const GirlsSelect = () => {
   const selector = useSelector((state) => state);
 
   const girlName = getGirlName(selector);
-
   const girlAge = getGirlAge(selector);
   const girlAddress = getGirlAddress(selector);
   const girlDescription = getGirlDescription(selector);
   const girlImage = getGirlImage(selector);
 
   useEffect(() => {
-    dispatch(fetchGirls("3"));
+    dispatch(fetchGirls("2"));
   }, []);
 
   return (
