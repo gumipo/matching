@@ -81,7 +81,7 @@ const Home = () => {
           />
         </StyledImageChange>
         {!userName ? (
-          <StyledNothingButton>ニックネームを登録してね</StyledNothingButton>
+          <StyledNothingButton>ニックネームを入力してね</StyledNothingButton>
         ) : (
           <StyledStartButton
             onClick={() => {

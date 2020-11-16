@@ -23,7 +23,7 @@ const GirlsSelect = () => {
   const girlImage = getGirlImage(selector);
 
   useEffect(() => {
-    dispatch(fetchGirls("2"));
+    dispatch(fetchGirls("3"));
   }, []);
 
   return (
