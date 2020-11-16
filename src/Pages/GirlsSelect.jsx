@@ -40,7 +40,7 @@ const GirlsSelect = () => {
           <p>{girlDescription}</p>
         </StyledCardBottom>
       </StyledCard>
-      <StyledButton>{girlName + "さんとチャットする"}</StyledButton>
+      <StyledButton onClick={()=>history.push("/chat")}>{girlName + "さんとチャットする"}</StyledButton>
     </StyledSection>
   );
 };

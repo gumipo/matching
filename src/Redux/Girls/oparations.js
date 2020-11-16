@@ -4,7 +4,7 @@ import { fetchGirlAction } from "./actions";
 export const fetchGirls = (level) => {
   return async (dispatch) => {
     const query = db.collection("girls").where("level", "==", level);
-    query.get().then((snapshots) => {
+      query.get().then((snapshots) => {
       snapshots.forEach((snapshot) => {
         const girl = snapshot.data();
         const data = {
