@@ -1,7 +1,6 @@
 import React from "react";
-import { Home, GirlsSelect, Chat } from "./Pages/index";
+import { Home, GirlsSelect, Chat, StartChat } from "./Pages/index";
 import { Route, Switch, HashRouter } from "react-router-dom";
-import { StartChat } from "../src/Pages";
 
 const Router = () => {
   return (
