@@ -7,6 +7,7 @@ const dataset = {
     ],
     girlanswer:"",
   },
+
 "first": {
   answers: [
       {content: "お仕事なにされてるんですか。", nextId: "job"},
@@ -113,7 +114,6 @@ const dataset = {
   answers: [
       {content: "ごめん諦められない！", nextId: "correctmodal"},
       {content: "これは俺の性格なんだ", nextId: "modal"},
-      {content: "", nextId: ""},
     ],
   },
 }
