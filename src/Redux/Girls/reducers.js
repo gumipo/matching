@@ -5,6 +5,12 @@ export const GirlReducer = (state = initialState.girl, action) => {
   switch (action.type) {
     case Actions.FETCH_GIRL:
       return {
+        ...state,
+        ...action.payload,
+      };
+    case Actions.LEBEL_UP:
+      return {
+        ...state,
         ...action.payload,
       };
     default:

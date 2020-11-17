@@ -7,9 +7,11 @@ import {
   getGirlAddress,
   getGirlDescription,
   getGirlImage,
+  getGirlLebel,
 } from "../Redux/Girls/selector";
 import { fetchGirls } from "../Redux/Girls/oparations";
 import styled from "styled-components";
+import { lebelUpAction } from "../Redux/Girls/actions";
 
 const GirlsSelect = () => {
   const history = useHistory();
@@ -21,10 +23,20 @@ const GirlsSelect = () => {
   const girlAddress = getGirlAddress(selector);
   const girlDescription = getGirlDescription(selector);
   const girlImage = getGirlImage(selector);
+  let lebel = getGirlLebel(selector);
 
   useEffect(() => {
-    dispatch(fetchGirls("3"));
+    lebel++;
+    dispatch(lebelUpAction(lebel));
   }, []);
+
+  useEffect(() => {
+    if (lebel === 0) {
+      return;
+    }
+    const stringLebel = String(lebel);
+    dispatch(fetchGirls(stringLebel));
+  }, [lebel]);
 
   return (
     <StyledSection>
@@ -40,7 +52,9 @@ const GirlsSelect = () => {
           <p>{girlDescription}</p>
         </StyledCardBottom>
       </StyledCard>
-      <StyledButton onClick={()=>history.push("/chat")}>{girlName + "さんとチャットする"}</StyledButton>
+      <StyledButton onClick={() => history.push("/chat")}>
+        {girlName + "さんとチャットする"}
+      </StyledButton>
     </StyledSection>
   );
 };

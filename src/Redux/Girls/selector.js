@@ -22,3 +22,8 @@ export const getGirlImage = createSelector(
   [GirlsSelector],
   (state) => state.image
 );
+
+export const getGirlLebel = createSelector(
+  [GirlsSelector],
+  (state) => state.lebel
+);
