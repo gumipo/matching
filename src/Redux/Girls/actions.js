@@ -1,5 +1,3 @@
-import { Description } from "@material-ui/icons";
-
 export const FETCH_GIRL = "FETCH_GIRL";
 export const fetchGirlAction = (girl) => {
   return {
@@ -10,6 +8,16 @@ export const fetchGirlAction = (girl) => {
       description: girl.description,
       address: girl.address,
       image: girl.image,
+    },
+  };
+};
+
+export const LEBEL_UP = "LEBEL_UP";
+export const lebelUpAction = (lebel) => {
+  return {
+    type: "LEBEL_UP",
+    payload: {
+      lebel: lebel,
     },
   };
 };

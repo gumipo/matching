@@ -1,0 +1,17 @@
+.girl__chat {
+  justify-content: flex-end;
+  flex-direction: row-reverse;
+  background-color: pink;
+}
+
+.my__chat {
+  justify-content: flex-end;
+  background-color: #01ff00;
+}
+.girl__chat_wrap {
+  justify-content: flex-start;
+}
+
+.my__chat_wrap {
+  justify-content: flex-end;
+}
