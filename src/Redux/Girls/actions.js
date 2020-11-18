@@ -12,6 +12,20 @@ export const fetchGirlAction = (girl) => {
   };
 };
 
+export const RESET_GIRL = "RESET_GIRL";
+export const resetGirlAction = () => {
+  return {
+    type: "RESET_GIRL",
+    payload: {
+      name: "",
+      age: "",
+      description: "",
+      address: "",
+      image: "",
+    },
+  };
+};
+
 export const LEVEL_UP = "LEVEL_UP";
 export const levelUpAction = (level) => {
   return {

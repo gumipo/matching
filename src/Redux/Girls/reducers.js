@@ -8,6 +8,11 @@ export const GirlReducer = (state = initialState.girl, action) => {
         ...state,
         ...action.payload,
       };
+    case Actions.RESET_GIRL:
+      return {
+        ...state,
+        ...action.payload,
+      };
     case Actions.LEVEL_UP:
       return {
         ...state,
