@@ -8,11 +8,12 @@ const dataset = {
         nextId: "confession",
       },
     ],
-"first": {
-  answers: [
-      {content: "お仕事なにされてるんですか。", nextId: "job"},
-      {content: "Line教えて下さい", nextId: "line"},
-      {content: "今度デートでも行きませんか", nextId: "dinner"},
+  },
+  first: {
+    answers: [
+      { content: "お仕事なにされてるんですか。", nextId: "job" },
+      { content: "Line教えて下さい", nextId: "line" },
+      { content: "今度デートでも行きませんか", nextId: "dinner" },
     ],
     girlanswer: "私はアミです。よろしくね😍",
   },
@@ -56,7 +57,6 @@ const dataset = {
       { content: "もう一度連絡してみる", nextId: "agein" },
       { content: "", nextId: "modal" },
     ],
-},
     grilanswer: "音信不通になった",
   },
   engineer: {
@@ -90,7 +90,6 @@ const dataset = {
     answers: [
       { content: "ごめん諦められない！", nextId: "correctmodal" },
       { content: "これは俺の性格なんだ", nextId: "modal" },
-      { content: "", nextId: "" },
     ],
   },
 };

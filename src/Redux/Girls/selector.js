@@ -23,7 +23,7 @@ export const getGirlImage = createSelector(
   (state) => state.image
 );
 
-export const getGirlLebel = createSelector(
+export const getGirlLevel = createSelector(
   [GirlsSelector],
-  (state) => state.lebel
+  (state) => state.level
 );

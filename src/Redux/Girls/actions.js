@@ -12,12 +12,12 @@ export const fetchGirlAction = (girl) => {
   };
 };
 
-export const LEBEL_UP = "LEBEL_UP";
-export const lebelUpAction = (lebel) => {
+export const LEVEL_UP = "LEVEL_UP";
+export const levelUpAction = (level) => {
   return {
-    type: "LEBEL_UP",
+    type: "LEVEL_UP",
     payload: {
-      lebel: lebel,
+      level: level,
     },
   };
 };

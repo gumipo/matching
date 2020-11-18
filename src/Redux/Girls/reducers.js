@@ -8,7 +8,7 @@ export const GirlReducer = (state = initialState.girl, action) => {
         ...state,
         ...action.payload,
       };
-    case Actions.LEBEL_UP:
+    case Actions.LEVEL_UP:
       return {
         ...state,
         ...action.payload,
