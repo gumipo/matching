@@ -4,7 +4,7 @@ const initialState = {
     image: "",
   },
   girl: {
-    lebel: 0,
+    level: 0,
     name: "",
     age: "",
     description: "",

@@ -7,11 +7,11 @@ import {
   getGirlAddress,
   getGirlDescription,
   getGirlImage,
-  getGirlLebel,
+  getGirlLevel,
 } from "../Redux/Girls/selector";
 import { fetchGirls } from "../Redux/Girls/oparations";
 import styled from "styled-components";
-import { lebelUpAction } from "../Redux/Girls/actions";
+import { levelUpAction } from "../Redux/Girls/actions";
 
 const GirlsSelect = () => {
   const history = useHistory();
@@ -23,24 +23,26 @@ const GirlsSelect = () => {
   const girlAddress = getGirlAddress(selector);
   const girlDescription = getGirlDescription(selector);
   const girlImage = getGirlImage(selector);
-  let lebel = getGirlLebel(selector);
+  let level = getGirlLevel(selector);
 
   useEffect(() => {
-    lebel++;
-    dispatch(lebelUpAction(lebel));
+    level++;
+    dispatch(levelUpAction(level));
   }, []);
 
   useEffect(() => {
-    if (lebel === 0) {
+    if (level === 0) {
       return;
     }
-    const stringLebel = String(lebel);
-    dispatch(fetchGirls(stringLebel));
-  }, [lebel]);
+    const stringLevel = String(level);
+    dispatch(fetchGirls(stringLevel));
+  }, [level]);
 
   return (
     <StyledSection>
-      <h1>{girlName + "さんとマッチングしました"}</h1>
+      <StyledGirlSelectTitle>
+        {girlName + "さんとマッチングしました"}
+      </StyledGirlSelectTitle>
       <StyledCard>
         <StyledCardHeader>
           <img src={girlImage} />
@@ -62,14 +64,22 @@ const GirlsSelect = () => {
 export default GirlsSelect;
 
 const StyledSection = styled.section`
+  width: 800px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background-color: white;
   display: grid;
   place-items: center;
+`;
+
+const StyledGirlSelectTitle = styled.h1`
+  font-family: sans-serif;
 `;
 
 const StyledCard = styled.div`
   border-radius: 10px;
   background-color: white;
-  box-shadow: -2px -1px 20px 0px pink;
+  box-shadow: -2px -1px 20px 0px black;
 `;
 
 const StyledCardHeader = styled.div`
@@ -97,5 +107,8 @@ const StyledButton = styled.button`
   height: 50px;
   border-radius: 10px;
   margin-top: 20px;
+  margin-bottom: 100px;
   font-size: 17px;
+  font-weight: bold;
+  box-shadow: 2px 2px 2px 2px;
 `;

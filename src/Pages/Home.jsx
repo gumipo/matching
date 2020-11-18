@@ -100,7 +100,6 @@ const Home = () => {
 export default Home;
 
 const StyledHome = styled.section`
-  background-color: orange;
   min-height: 100vh;
   display: grid;
   place-items: center;

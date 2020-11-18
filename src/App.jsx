@@ -6,7 +6,7 @@ import "./assets/style.css";
 const App = () => {
   return (
     <React.Fragment>
-      <main className="background-design">
+      <main>
         <Router />
       </main>
     </React.Fragment>
