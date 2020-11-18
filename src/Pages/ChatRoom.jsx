@@ -56,11 +56,21 @@ const ChatRoom = () => {
   const displayNextQuestion = (nextQuestionId, nextDataset) => {
     if (nextDataset.girlanswer !== undefined) {
       addChats({
-        text: nextDataset.girlanswer,
+        text: nextDataset.girlanswer.replace("userName", userName),
         type: "girlanswer",
       });
     }
-    setAnswers(nextDataset.answers);
+
+    const replaceAnswerText = nextDataset.answers;
+    replaceAnswerText.forEach((text) => {
+      const res = text.content.includes("userName");
+      if (res) {
+        text.content = text.content.replace("userName", userName);
+      }
+      return text;
+    });
+
+    setAnswers(replaceAnswerText);
     setCurrentId(nextQuestionId);
   };
 

@@ -1,7 +1,7 @@
 const dataset = {
   init: {
     answers: [
-      { content: "はじめましてです", nextId: "first" },
+      { content: "はじめましてuserNameです", nextId: "first" },
       { content: "Lineおしえて！！", nextId: "firstline" },
       {
         content: "めっちゃ可愛いですね付き合ってください！！！",
@@ -38,7 +38,7 @@ const dataset = {
       { content: "ニートで毎日家にいます", nextId: "neet" },
       { content: "ラブホのトイレ掃除の仕事してます", nextId: "lovehotel" },
     ],
-    girlanswer: "私はキャバクラで今バイトしてます。+ {name}さんは?",
+    girlanswer: "私はキャバクラで今バイトしてます。userNameさんは?",
   },
   line: {
     answers: [{ content: "", nextId: "modal" }],
