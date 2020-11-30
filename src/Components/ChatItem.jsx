@@ -3,7 +3,7 @@ import styled from "styled-components";
 import NoImage from "../assets/Images/Noimage.png";
 import styles from "./ChatItem.module.css";
 
-const Chat = ({ text, type, userName, userImage, girlName, girlImage }) => {
+const Chat = ({ text, type, userImage, girlImage }) => {
   const girlAnswer = type === "girlanswer";
   const containerClasses =
     type === "girlanswer" ? styles.girl__chat_wrap : styles.my__chat_wrap;

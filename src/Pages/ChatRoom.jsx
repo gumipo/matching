@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import styled from "styled-components";
 import dataset from "../dataset";
 import secondDataset from "../secondDataset";
 // import dataset3 from "../dataset3";
@@ -11,7 +12,6 @@ import {
   getGirlLevel,
 } from "../Redux/Girls/selector";
 import { ChatList, AnswersList } from "../Components/index";
-import styled from "styled-components";
 
 const ChatRoom = () => {
   const history = useHistory();
@@ -27,6 +27,7 @@ const ChatRoom = () => {
   const [data, setData] = useState([]);
   const [currentId, setCurrentId] = useState("init");
   const [modal, setModal] = useState(false);
+  const [displayNoneAnswer, setDisplayNoneAnswer] = useState(false);
 
   const selectAnswer = (selectedAnswer, nextQuestionId) => {
     switch (true) {
@@ -39,10 +40,12 @@ const ChatRoom = () => {
           text: selectedAnswer,
           type: "answer",
         });
-        setTimeout(
-          () => displayNextQuestion(nextQuestionId, data[nextQuestionId]),
-          1000
-        );
+
+        setDisplayNoneAnswer(true);
+        setTimeout(() => {
+          displayNextQuestion(nextQuestionId, data[nextQuestionId]);
+          setDisplayNoneAnswer(false);
+        }, 1000);
         break;
     }
   };
@@ -63,8 +66,8 @@ const ChatRoom = () => {
 
     const replaceAnswerText = nextDataset.answers;
     replaceAnswerText.forEach((text) => {
-      const res = text.content.includes("userName");
-      if (res) {
+      const stringInUserName = text.content.includes("userName");
+      if (stringInUserName) {
         text.content = text.content.replace("userName", userName);
       }
       return text;
@@ -105,7 +108,10 @@ const ChatRoom = () => {
           girlName={girlName}
           girlImage={girlImage}
         />
-        <AnswersList answers={answers} selectAnswer={selectAnswer} />
+
+        {!displayNoneAnswer && (
+          <AnswersList answers={answers} selectAnswer={selectAnswer} />
+        )}
       </div>
     </StyledSection>
   );

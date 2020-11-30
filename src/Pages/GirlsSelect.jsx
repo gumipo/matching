@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -12,7 +12,7 @@ import {
 import { fetchGirls } from "../Redux/Girls/oparations";
 import styled from "styled-components";
 import { levelUpAction } from "../Redux/Girls/actions";
-import {LoadingMotion} from "./index"; 
+import { LoadingMotion } from "../Components/index";
 
 const GirlsSelect = () => {
   const history = useHistory();
@@ -27,7 +27,7 @@ const GirlsSelect = () => {
   let level = getGirlLevel(selector);
 
   const [loading, setLoading] = useState(false);
-  
+
   useEffect(() => {
     level++;
     setLoading(true);
@@ -42,41 +42,40 @@ const GirlsSelect = () => {
     dispatch(fetchGirls(stringLevel));
   }, [level]);
 
-
   useEffect(() => {
-    if(girlImage.length === 0) {
-      return
-    };
+    if (girlImage.length === 0) {
+      return;
+    }
     setLoading(false);
-  },[girlImage])
+  }, [girlImage]);
 
   return (
     <>
       {loading ? (
         <StyledSection>
-          <LoadingMotion/>
+          <LoadingMotion />
         </StyledSection>
-          ) : (
-      <StyledSection>
-              <StyledGirlSelectTitle>
-                {girlName + "さんとマッチングしました"}
-              </StyledGirlSelectTitle>
-                <StyledCard>
-                <StyledCardHeader>
-                  <img src={girlImage} />
-                </StyledCardHeader>
-                <StyledCardBottom>
-                  <p>{`ニックネーム: ${girlName}  (${girlAge})`}</p>
-                  <p>住んでるところ: {girlAddress}</p>
-                  <h3>コメント</h3>
-                  <p>{girlDescription}</p>
-                </StyledCardBottom>
-              </StyledCard>
-              <StyledButton onClick={() => history.push("/chat")}>
-                {girlName + "さんとチャットする"}
-              </StyledButton>
-      </StyledSection>
-            )}
+      ) : (
+        <StyledSection>
+          <StyledGirlSelectTitle>
+            {girlName + "さんとマッチングしました"}
+          </StyledGirlSelectTitle>
+          <StyledCard>
+            <StyledCardHeader>
+              <img src={girlImage} />
+            </StyledCardHeader>
+            <StyledCardBottom>
+              <p>{`ニックネーム: ${girlName}  (${girlAge})`}</p>
+              <p>住んでるところ: {girlAddress}</p>
+              <h3>コメント</h3>
+              <p>{girlDescription}</p>
+            </StyledCardBottom>
+          </StyledCard>
+          <StyledButton onClick={() => history.push("/chat")}>
+            {girlName + "さんとチャットする"}
+          </StyledButton>
+        </StyledSection>
+      )}
     </>
   );
 };
