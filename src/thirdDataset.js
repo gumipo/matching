@@ -175,7 +175,6 @@ const thirdDataset = {
         content: "Youtubeで学習する",
         nextId: "https://www.youtube.com/watch?v=CyY2aoc68qo",
       },
-      { content: "", nextId: "" },
     ],
     girlanswer: "少納言は位につきての呼称なれば好かず",
   },
