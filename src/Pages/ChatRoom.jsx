@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 import dataset from "../dataset";
 import secondDataset from "../secondDataset";
-// import dataset3 from "../dataset3";
+import thirdDataset from "../thirdDataset";
 import { getUserName, getUserImage } from "../Redux/User/selector";
 import {
   getGirlName,
@@ -84,6 +84,9 @@ const ChatRoom = () => {
         break;
       case 2:
         setData(secondDataset);
+        break;
+      case 3:
+        setData(thirdDataset);
         break;
       default:
     }

@@ -1,6 +1,5 @@
 import React from "react";
 import { ChatItem } from "./index";
-import NoImage from "../assets/Images/Noimage.png";
 import styled from "styled-components";
 
 const ChatList = ({ chats, userName, userImage, girlName, girlImage }) => {
