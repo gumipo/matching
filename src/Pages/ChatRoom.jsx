@@ -96,18 +96,27 @@ const ChatRoom = () => {
     displayNextQuestion(currentId, data[currentId]);
   }, [data]);
 
+  useEffect(() => {
+    const scrollArea = document.getElementById("scroll-area");
+    if (scrollArea) {
+      scrollArea.scrollTop = scrollArea.scrollHeight;
+    }
+  });
+
   return (
     <StyledSection>
       <div>
         <h1>さっそく{girlName}さんにメッセージを送ってみましょう</h1>
         <button onClick={() => history.push("/girls/select")}>次の子</button>
-        <ChatList
-          chats={chats}
-          userName={userName}
-          userImage={userImage}
-          girlName={girlName}
-          girlImage={girlImage}
-        />
+        <Wrap id={"scroll-area"}>
+          <ChatList
+            chats={chats}
+            userName={userName}
+            userImage={userImage}
+            girlName={girlName}
+            girlImage={girlImage}
+          />
+        </Wrap>
 
         {!displayNoneAnswer && (
           <AnswersList answers={answers} selectAnswer={selectAnswer} />
@@ -125,4 +134,10 @@ const StyledSection = styled.div`
   margin: 0 auto;
   text-align: center;
   background-color: white;
+`;
+
+const Wrap = styled.div`
+  height: 400px;
+  overflow: auto;
+  padding: 0;
 `;
