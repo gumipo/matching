@@ -24,7 +24,6 @@ const dataset = {
         content: "なら今度食事行かない？良いお店知ってるからどうかな？",
         nextId: "dinner",
       },
-      { content: "諦める", nextId: "givup" },
     ],
     girlanswer: "いきなりLine聞いてくる人とは仲良くできないな",
   },
@@ -53,10 +52,7 @@ const dataset = {
     girlanswer: "えー!どこ連れてってくれるんですか?",
   },
   Please: {
-    answers: [
-      { content: "もう一度連絡してみる", nextId: "agein" },
-      { content: "", nextId: "modal" },
-    ],
+    answers: [{ content: "もう一度連絡してみる", nextId: "again" }],
     grilanswer: "音信不通になった",
   },
   engineer: {
@@ -86,7 +82,7 @@ const dataset = {
   wc: {
     answers: [{ content: "", nextId: "correctmodal" }],
   },
-  agein: {
+  again: {
     answers: [
       { content: "ごめん諦められない！", nextId: "correctmodal" },
       { content: "これは俺の性格なんだ", nextId: "modal" },
