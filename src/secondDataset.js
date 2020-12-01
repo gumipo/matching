@@ -26,23 +26,29 @@ const secondDataset = {
     answers: [
       { content: "僕はブラック派です", nextId: "isBlack" },
       { content: "牛乳って何にかけるんですか", nextId: "SprinkleMilk" },
-      { content: "僕にも牛乳かけてマイルドにしてほしい", nextId: "modal" },
+      {
+        content: "僕にも牛乳かけてマイルドにしてほしい",
+        nextId: "mistake",
+      },
     ],
     girlanswer: "私はマイルドにしたい",
   },
   dating: {
     answers: [
       {
-        content: "You tubeを見る",
+        content: "牛乳を注ぐYou tubeを見る",
         nextId: "https://www.youtube.com/watch?v=pia0iJLqzmA&t=13s",
       },
-      { content: "なんにでも牛乳注ぐとか頭イカれてますね", nextId: "modal" },
+      {
+        content: "なんにでも牛乳注ぐとか頭イカれてますね",
+        nextId: "mistake",
+      },
     ],
     girlanswer: "牛乳注ぐのに忙しいからそんな暇ありません",
   },
 
   line: {
-    answers: [{ content: "", nextId: "modal" }],
+    answers: [{ content: "", nextId: "mistake" }],
     girlanswer: "バカにしてますの？ひどいお方",
   },
   era: {
@@ -61,7 +67,10 @@ const secondDataset = {
         content: "You tubeを見る",
         nextId: "https://www.youtube.com/watch?v=pia0iJLqzmA&t=13s",
       },
-      { content: "犬の飯食ってるのと変わらないですね", nextId: "modal" },
+      {
+        content: "犬の飯食ってるのと変わらないですね",
+        nextId: "mistake",
+      },
     ],
     girlanswer:
       "それはいいですわ〜。わたし、注ぐの大好きなの。こんな感じで注ぎたいわ〜",
@@ -73,15 +82,15 @@ const secondDataset = {
         content: "You tubeを見る",
         nextId: "https://www.youtube.com/watch?v=pia0iJLqzmA&t=13s",
       },
-      { content: "見ました。気持ち悪いですね", nextId: "modal" },
+      { content: "見ました。気持ち悪いですね", nextId: "mistake" },
     ],
     girlanswer: "You tubeあげたので見てください",
   },
 
   LowerHeart: {
     answers: [
-      { content: "一生寄り添いますよ！！", nextId: "chatEnd" },
-      { content: "", nextId: "modal" },
+      { content: "一生寄り添いますよ！！", nextId: "correct_modal" },
+      { content: "", nextId: "mistake" },
     ],
     girlanswer: "それは頼もしいわ",
   },
@@ -91,11 +100,11 @@ const secondDataset = {
   },
 
   chatEnd: {
-    answers: [{ content: "", nextId: "modal" }],
+    answers: [{ content: "", nextId: "mistake" }],
     girlanswer: "その想いは重いわ…",
   },
   angryGirl: {
-    answers: [{ content: "", nextId: "modal" }],
+    answers: [{ content: "", nextId: "mistake" }],
     girlanswer: "もういいわ！！",
   },
 };

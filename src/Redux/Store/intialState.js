@@ -10,6 +10,7 @@ const initialState = {
     description: "",
     address: "",
     image: "",
+    isReplay: false,
   },
 };
 

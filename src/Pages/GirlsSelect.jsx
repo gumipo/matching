@@ -8,6 +8,7 @@ import {
   getGirlDescription,
   getGirlImage,
   getGirlLevel,
+  getisReplayState,
 } from "../Redux/Girls/selector";
 import { fetchGirls } from "../Redux/Girls/oparations";
 import styled from "styled-components";
@@ -24,11 +25,14 @@ const GirlsSelect = () => {
   const girlAddress = getGirlAddress(selector);
   const girlDescription = getGirlDescription(selector);
   const girlImage = getGirlImage(selector);
+  const isReplayState = getisReplayState(selector);
   let level = getGirlLevel(selector);
-
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    if (isReplayState === true) {
+      return;
+    }
     level++;
     setLoading(true);
     dispatch(levelUpAction(level));

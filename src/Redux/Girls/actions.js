@@ -35,3 +35,11 @@ export const levelUpAction = (level) => {
     },
   };
 };
+
+export const REPLAY = "REPLAY";
+export const isReplayAction = (isReplay) => {
+  return {
+    type: "REPLAY",
+    payload: isReplay,
+  };
+};

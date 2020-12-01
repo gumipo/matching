@@ -27,3 +27,8 @@ export const getGirlLevel = createSelector(
   [GirlsSelector],
   (state) => state.level
 );
+
+export const getisReplayState = createSelector(
+  [GirlsSelector],
+  (state) => state.isReplay
+);
