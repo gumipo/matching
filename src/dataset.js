@@ -19,7 +19,7 @@ const dataset = {
   },
   firstline: {
     answers: [
-      { content: "お願い！！", nextId: "Please" },
+      { content: "お願い！！", nextId: "press" },
       {
         content: "なら今度食事行かない？良いお店知ってるからどうかな？",
         nextId: "dinner",
@@ -28,7 +28,7 @@ const dataset = {
     girlanswer: "いきなりLine聞いてくる人とは仲良くできないな",
   },
   confession: {
-    answers: [{ content: "", nextId: "modal" }],
+    answers: [{ content: "", nextId: "" }],
     girlanswer: "無理です",
   },
   job: {
@@ -40,7 +40,7 @@ const dataset = {
     girlanswer: "私はキャバクラで今バイトしてます。userNameさんは?",
   },
   line: {
-    answers: [{ content: "", nextId: "modal" }],
+    answers: [{ content: "", nextId: "" }],
     girlanswer: "すみません。いきなりLine聞いてくる人とは仲良くなれません",
   },
   dinner: {
@@ -51,42 +51,56 @@ const dataset = {
     ],
     girlanswer: "えー!どこ連れてってくれるんですか?",
   },
-  Please: {
-    answers: [{ content: "もう一度連絡してみる", nextId: "again" }],
-    grilanswer: "音信不通になった",
+  press: {
+    answers: [
+      { content: "１日１０万でどう？", nextId: "again" },
+      { content: "おお〜い(笑)", nextId: "mistake_modal" },
+    ],
+    girlanswer: "・・・・・・・・",
   },
   engineer: {
-    answers: [{ content: "", nextId: "modal" }],
+    answers: [{ content: "", nextId: "" }],
     girlanswer: "元カレエンジニアだったからエンジニアはちょっとないわ",
   },
   neet: {
-    answers: [{ content: "", nextId: "modal" }],
+    answers: [{ content: "", nextId: "" }],
     girlanswer: "働け",
   },
   lovehotel: {
-    answers: [{ content: "トイレ巡りでもしませんか？", nextId: "wc" }],
+    answers: [{ content: "トイレ巡りでもしませんか？", nextId: "correct_wc" }],
     girlanswer: "私もキャバクラのトイレ毎日洗ってるんです！",
   },
   gast: {
-    answers: [{ content: "", nextId: "modal" }],
+    answers: [{ content: "", nextId: "" }],
     girlanswer: "ジョイフル派なんで私",
   },
   saize: {
-    answers: [{ content: "", nextId: "modal" }],
+    answers: [{ content: "", nextId: "" }],
     girlanswer: "ガスト派なんで私",
   },
   joyfle: {
-    answers: [{ content: "", nextId: "modal" }],
+    answers: [{ content: "", nextId: "" }],
     girlanswer: "サイゼ派なんで私",
   },
-  wc: {
-    answers: [{ content: "", nextId: "correctmodal" }],
+  correct_wc: {
+    girlanswer: "ぜひトイレデートに行きましょう！！！",
   },
   again: {
     answers: [
-      { content: "ごめん諦められない！", nextId: "correctmodal" },
-      { content: "これは俺の性格なんだ", nextId: "modal" },
+      {
+        content: "君が魅力的すぎて諦められないんだよ！",
+        nextId: "correct_again",
+      },
+      { content: "これ、俺の性格だから", nextId: "mistake_modal" },
     ],
+    girlanswer: "しつこい人ですね",
+  },
+  correct_again: {
+    girlanswer: "サキッポだけよ....",
+  },
+  mistake_modal: {
+    answers: [{ content: "", nextId: "" }],
+    girlanswer: "ウザいね君",
   },
 };
 

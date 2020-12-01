@@ -18,6 +18,11 @@ export const GirlReducer = (state = initialState.girl, action) => {
         ...state,
         ...action.payload,
       };
+    case Actions.REPLAY:
+      return {
+        ...state,
+        isReplay: action.payload,
+      };
     default:
       return state;
   }

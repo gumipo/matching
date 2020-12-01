@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 import dataset from "../dataset";
 import secondDataset from "../secondDataset";
@@ -11,10 +10,9 @@ import {
   getGirlImage,
   getGirlLevel,
 } from "../Redux/Girls/selector";
-import { ChatList, AnswersList, MistakeModal } from "../Components/index";
+import { ChatList, AnswersList, GirlAnswerModal } from "../Components/index";
 
 const ChatRoom = () => {
-  const history = useHistory();
   const selector = useSelector((state) => state);
   const userName = getUserName(selector);
   const userImage = getUserImage(selector);
@@ -27,24 +25,24 @@ const ChatRoom = () => {
   const [data, setData] = useState([]);
   const [currentId, setCurrentId] = useState("init");
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [selectJudgment, setSelectJudgment] = useState("mistake");
   const [displayNoneAnswer, setDisplayNoneAnswer] = useState(false);
   const [girlText, setGirlText] = useState("");
 
-  //label id
+  //label 　cotent : 付き合ってください  id :firs_line
   const selectAnswer = (selectedAnswer, nextQuestionId) => {
     switch (true) {
-      case nextQuestionId === "modal":
+      case nextQuestionId.includes("correct"):
+        setSelectJudgment("correct");
+        setGirlText(data[nextQuestionId].girlanswer);
         setModalIsOpen(true);
-        displayNextQuestion();
         break;
-
       case /^https:*/.test(nextQuestionId):
         const a = document.createElement("a");
         a.href = nextQuestionId;
         a.target = "_blank";
         a.click();
         break;
-
       default:
         addChats({
           text: selectedAnswer,
@@ -65,13 +63,15 @@ const ChatRoom = () => {
     });
   };
 
-  //次のid 次のdata
+  //次のid  次のdata
   const displayNextQuestion = (nextQuestionId, nextDataset) => {
     if (nextDataset.answers[0].content === "") {
+      setSelectJudgment("mistake");
       setModalIsOpen(true);
       setGirlText(nextDataset.girlanswer);
       return;
     }
+
     if (nextDataset.girlanswer !== undefined) {
       addChats({
         text: nextDataset.girlanswer.replace("userName", userName),
@@ -123,15 +123,18 @@ const ChatRoom = () => {
   return (
     <StyledSection>
       {modalIsOpen === true && (
-        <MistakeModal
+        <GirlAnswerModal
           girlText={girlText}
           setModalIsOpen={setModalIsOpen}
           modalIsOpen={modalIsOpen}
+          selectJudgment={selectJudgment}
+          girlImage={girlImage}
         />
       )}
       <div>
-        <h1>さっそく{girlName}さんにメッセージを送ってみましょう</h1>
-        <button onClick={() => history.push("/girls/select")}>次の子</button>
+        <StyledSectionTitle>
+          さっそく{girlName}さんにメッセージを送ってみましょう
+        </StyledSectionTitle>
         <Wrap id={"scroll-area"}>
           <ChatList
             chats={chats}
@@ -146,9 +149,6 @@ const ChatRoom = () => {
           <AnswersList answers={answers} selectAnswer={selectAnswer} />
         )}
       </div>
-      <button onClick={() => setModalIsOpen(true)}>
-        eeeeeeeeeeeeeeeeeeeeeeeeeeeee
-      </button>
     </StyledSection>
   );
 };
@@ -163,8 +163,13 @@ const StyledSection = styled.div`
   background-color: white;
 `;
 
+const StyledSectionTitle = styled.h1`
+  margin: 0;
+  padding: 10px;
+`;
+
 const Wrap = styled.div`
-  height: 400px;
+  height: 550px;
   overflow: auto;
   padding: 0;
 `;

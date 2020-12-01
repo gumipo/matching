@@ -37,11 +37,12 @@ const thirdDataset = {
         nextId: "unknown",
       },
       {
-        content: "UserNameさんのことはなんて読んだらいい？",
+        content: "かれぴっぴってよんで",
         nextId: "your_name",
       },
     ],
-    girlanswer: "え...なごちん......我はなごちんならず",
+    girlanswer:
+      "え...なごちん......我はなごちんならず userNameさんのことはなんて読んだらいい？",
   },
   dont_know: {
     answers: [
@@ -180,7 +181,7 @@ const thirdDataset = {
   },
   your_name: {
     answers: [{ content: "", nextId: "" }],
-    girlanswer: "かれぴっぴって呼んでくだちゃい",
+    girlanswer: "キモチワル....",
   },
 };
 
