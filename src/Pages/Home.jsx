@@ -116,6 +116,9 @@ const StyledHomeInner = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media screen and (max-width: 767px) {
+    width: 350px;
+  }
 `;
 
 const StyledUserNameArea = styled.div`
