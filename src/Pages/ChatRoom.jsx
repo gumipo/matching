@@ -33,11 +33,13 @@ const ChatRoom = () => {
   const selectAnswer = (selectedAnswer, nextQuestionId) => {
     switch (true) {
       case nextQuestionId.includes("correct"):
-        setSelectJudgment("correct");
-        setGirlText(data[nextQuestionId].girlanswer);
-        setModalIsOpen(true);
+        setTimeout(() => {
+          setSelectJudgment("correct");
+          setGirlText(data[nextQuestionId].girlanswer);
+          setModalIsOpen(true);
+        }, 1000);
         break;
-      case /^https:*/.test(nextQuestionId):
+      case /^https:*/.test(nextQuestionId) || /^http:*/.test(nextQuestionId):
         const a = document.createElement("a");
         a.href = nextQuestionId;
         a.target = "_blank";

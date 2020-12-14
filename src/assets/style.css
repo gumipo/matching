@@ -20,6 +20,12 @@ html {
   background-size: 50px 50px;
 }
 
+@media screen and (max-width: 767px) {
+  html {
+    background-image: none;
+  }
+}
+
 button:hover {
   opacity: 0.7;
 }

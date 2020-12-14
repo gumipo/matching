@@ -28,7 +28,7 @@ const secondDataset = {
       { content: "牛乳って何にかけるんですか", nextId: "SprinkleMilk" },
       {
         content: "僕にも牛乳かけてマイルドにしてほしい",
-        nextId: "mistake",
+        nextId: "correctMild_milk",
       },
     ],
     girlanswer: "私はマイルドにしたい",
@@ -41,14 +41,14 @@ const secondDataset = {
       },
       {
         content: "なんにでも牛乳注ぐとか頭イカれてますね",
-        nextId: "mistake",
+        nextId: "crazy",
       },
     ],
     girlanswer: "牛乳注ぐのに忙しいからそんな暇ありません",
   },
 
   line: {
-    answers: [{ content: "", nextId: "mistake" }],
+    answers: [{ content: "", nextId: "" }],
     girlanswer: "バカにしてますの？ひどいお方",
   },
   era: {
@@ -69,7 +69,7 @@ const secondDataset = {
       },
       {
         content: "犬の飯食ってるのと変わらないですね",
-        nextId: "mistake",
+        nextId: "dogfood",
       },
     ],
     girlanswer:
@@ -79,18 +79,17 @@ const secondDataset = {
   SprinkleMilk: {
     answers: [
       {
-        content: "You tubeを見る",
+        content: "Youtubeを見る",
         nextId: "https://www.youtube.com/watch?v=pia0iJLqzmA&t=13s",
       },
-      { content: "見ました。気持ち悪いですね", nextId: "mistake" },
+      { content: "見ました。気持ち悪いですね", nextId: "disgusting" },
     ],
-    girlanswer: "You tubeあげたので見てください",
+    girlanswer: "Youtubeあげたので見てください",
   },
 
   LowerHeart: {
     answers: [
-      { content: "一生寄り添いますよ！！", nextId: "correct_modal" },
-      { content: "", nextId: "mistake" },
+      { content: "一生寄り添いますよ！！", nextId: "correct_LowerHeart" },
     ],
     girlanswer: "それは頼もしいわ",
   },
@@ -100,12 +99,33 @@ const secondDataset = {
   },
 
   chatEnd: {
-    answers: [{ content: "", nextId: "mistake" }],
+    answers: [{ content: "", nextId: "" }],
     girlanswer: "その想いは重いわ…",
   },
   angryGirl: {
-    answers: [{ content: "", nextId: "mistake" }],
-    girlanswer: "もういいわ！！",
+    answers: [{ content: "", nextId: "" }],
+    girlanswer: "あなたなんかもういいわ！！",
+  },
+  correct_LowerHeart: {
+    answers: [{ content: "", nextId: "" }],
+    girlanswer: "これから一緒に牛乳にまみれましょ♥",
+  },
+  correctMild_milk: {
+    answers: [{ content: "", nextId: "" }],
+    girlanswer: "これから一緒に牛乳にまみれましょ♥",
+  },
+
+  crazy: {
+    answers: [{ content: "", nextId: "" }],
+    girlanswer: "あん？テメェの血液、牛乳で全入れ替えしてやろうか💢",
+  },
+  disgusting: {
+    answers: [{ content: "", nextId: "" }],
+    girlanswer: "おろろろろろろろろえっっっっっっっうぇぇぇ(ゲロを吐く音)",
+  },
+  dogfood: {
+    answers: [{ content: "", nextId: "" }],
+    girlanswer: "あん？　誰がいぬまんまやボケが💢",
   },
 };
 
