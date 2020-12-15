@@ -93,10 +93,16 @@ const StyledSection = styled.section`
   background-color: white;
   display: grid;
   place-items: center;
+  @media screen and (max-width: 767px) {
+    width: 375px;
+  }
 `;
 
 const StyledGirlSelectTitle = styled.h1`
   font-family: sans-serif;
+  @media screen and (max-width: 767px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const StyledCard = styled.div`
@@ -111,6 +117,10 @@ const StyledCardHeader = styled.div`
     width: 450px;
     height: 450px;
     object-fit: cover;
+    @media screen and (max-width: 767px) {
+      width: 375px;
+      height: 375px;
+    }
   }
 `;
 
