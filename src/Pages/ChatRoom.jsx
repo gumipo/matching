@@ -135,7 +135,9 @@ const ChatRoom = () => {
       )}
       <div>
         <StyledSectionTitle>
-          さっそく{girlName}さんにメッセージを送ってみましょう
+          さっそく{girlName}さんに
+          <br />
+          メッセージを送ってみましょう
         </StyledSectionTitle>
         <Wrap id={"scroll-area"}>
           <ChatList
@@ -146,7 +148,6 @@ const ChatRoom = () => {
             girlImage={girlImage}
           />
         </Wrap>
-
         {!displayNoneAnswer && (
           <AnswersList answers={answers} selectAnswer={selectAnswer} />
         )}
@@ -177,11 +178,10 @@ const StyledSectionTitle = styled.h1`
 `;
 
 const Wrap = styled.div`
-  height: 550px;
+  height: 50vh;
   overflow: auto;
   padding: 0;
   @media screen and (max-width: 767px) {
     width: 350px;
-    height: 360px;
   }
 `;
