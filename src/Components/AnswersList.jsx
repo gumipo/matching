@@ -21,9 +21,9 @@ const AnswersList = (props) => {
 export default AnswersList;
 
 const StyledAnswerList = styled.div`
-  width: 500px;
+  min-width: 500px;
   position: absolute;
-  bottom: 50px;
+  top: 70%;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -31,6 +31,6 @@ const StyledAnswerList = styled.div`
   justify-content: flex-end;
   @media screen and (max-width: 767px) {
     width: 350px;
-    bottom: 0;
+    top: 72%;
   }
 `;

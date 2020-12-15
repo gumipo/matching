@@ -27,7 +27,7 @@ const Chat = ({ text, type, userImage, girlImage }) => {
 export default Chat;
 
 const StyledChatContainer = styled.div`
-  width: 1000px;
+  width: 65vw;
   margin-top: 10px;
   display: flex;
   @media screen and (max-width: 767px) {
