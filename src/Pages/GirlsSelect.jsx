@@ -109,6 +109,10 @@ const StyledCard = styled.div`
   border-radius: 10px;
   background-color: white;
   box-shadow: -2px -1px 20px 0px black;
+  width: 450px;
+  @media screen and (max-width: 767px) {
+    width: 320px;
+  }
 `;
 
 const StyledCardHeader = styled.div`
@@ -118,8 +122,8 @@ const StyledCardHeader = styled.div`
     height: 450px;
     object-fit: cover;
     @media screen and (max-width: 767px) {
-      width: 375px;
-      height: 375px;
+      width: 320px;
+      height: 250px;
     }
   }
 `;

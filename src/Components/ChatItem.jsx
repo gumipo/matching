@@ -41,7 +41,6 @@ const StyledChatWrapin = styled.div`
   border-radius: 25px;
   @media screen and (max-width: 767px) {
     width: 300px;
-    height: 50px;
     font-size: 14px;
   }
 `;
