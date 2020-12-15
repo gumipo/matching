@@ -2,13 +2,13 @@
   justify-content: flex-end;
   flex-direction: row-reverse;
   background-color: pink;
-  padding: 10px;
+  padding: 5px 10px 5px 10px;
   text-align: left;
 }
 .my__chat {
   justify-content: flex-end;
   background-color: #01ff00;
-  padding: 10px;
+  padding: 5px 10px 5px 10px;
   text-align: right;
 }
 .girl__chat_wrap {

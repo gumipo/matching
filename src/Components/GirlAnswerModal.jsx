@@ -5,23 +5,20 @@ import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 import { isReplayAction, resetGirlAction } from "../Redux/Girls/actions";
 import { getGirlLevel } from "../Redux/Girls/selector";
-import styles from "./modal.css.js";
 
 Modal.setAppElement("#root");
 
 const modalStyle = {
   overlay: {
-    position: "fixed",
-    top: 0,
-    left: 0,
+    width: "100%",
+    height: "100vh",
     backgroundColor: "rgba(0,0,0,0.85)",
   },
   content: {
     position: "absolute",
-    top: "10rem",
-    left: "35rem",
-    right: "35rem",
-    bottom: "10rem",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
     backgroundColor: "#dadad9",
     borderRadius: "1rem",
     padding: "1.5rem",
@@ -35,7 +32,7 @@ const GirlAnswerModal = (props) => {
   const level = getGirlLevel(selector);
 
   return (
-    <Modal isOpen={props.modalIsOpen} style={modalStyle}>
+    <StyledModal isOpen={props.modalIsOpen} style={modalStyle}>
       <StyledModalDescription>
         <h2>
           {props.selectJudgment === "correct" ? (
@@ -91,11 +88,16 @@ const GirlAnswerModal = (props) => {
           )}
         </StyledNavButtonArea>
       </StyledModalDescription>
-    </Modal>
+    </StyledModal>
   );
 };
 
 export default GirlAnswerModal;
+
+const StyledModal = styled(Modal)`
+  width: 400px;
+  height: 550px;
+`;
 
 const StyledModalDescription = styled.div`
   text-align: center;
