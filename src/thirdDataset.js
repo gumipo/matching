@@ -48,7 +48,7 @@ const thirdDataset = {
           "http://www.manabu-oshieru.com/daigakujuken/kobun/makura/001.html",
       },
       { content: "読みました！！い づ れの 御時にか...", nextId: "genji" },
-      { content: "は？源氏物語もよめ", nextId: "genji_read" }, // 続きなし///////////////////////////////////
+      { content: "は？源氏物語もよめ", nextId: "genji_read" },
     ],
     girlanswer: "は？枕草子読んで出直してこい",
   },
@@ -81,7 +81,7 @@ const thirdDataset = {
       { content: "枕草子ってなんですか？", nextId: "makuranosoushi" },
       { content: "僕、外国後なら得意なんですよ！", nextId: "language" },
     ],
-    grilanswer: "ha?枕草子読みて古語の学問ししよりいで直しゆきたまへ",
+    girlanswer: "ha?枕草子読みて古語の学問ししよりいで直しゆきたまへ",
   },
   no_transported: {
     answers: [{ content: "部屋の中に行きましょう", nextId: "room_in" }],
