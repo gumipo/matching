@@ -27,4 +27,7 @@ export default ChatList;
 const StyledChatsWrapper = styled.div`
   display: grid;
   place-items: center;
+  @media screen and (max-width: 767px) {
+    width: 350px;
+  }
 `;

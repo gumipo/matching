@@ -163,15 +163,25 @@ const StyledSection = styled.div`
   margin: 0 auto;
   text-align: center;
   background-color: white;
+  @media screen and (max-width: 767px) {
+    width: 350px;
+  }
 `;
 
 const StyledSectionTitle = styled.h1`
   margin: 0;
   padding: 10px;
+  @media screen and (max-width: 767px) {
+    font-size: 22px;
+  }
 `;
 
 const Wrap = styled.div`
   height: 550px;
   overflow: auto;
   padding: 0;
+  @media screen and (max-width: 767px) {
+    width: 350px;
+    height: 360px;
+  }
 `;

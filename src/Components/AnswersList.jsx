@@ -29,4 +29,8 @@ const StyledAnswerList = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  @media screen and (max-width: 767px) {
+    width: 350px;
+    bottom: 0;
+  }
 `;

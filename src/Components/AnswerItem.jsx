@@ -17,4 +17,8 @@ const StyledSelectButton = styled.button`
   margin-bottom: 10px;
   border-radius: 10px;
   background-color: orange;
+  @media screen and (max-width: 767px) {
+    width: 350px;
+    margin: 5px auto;
+  }
 `;

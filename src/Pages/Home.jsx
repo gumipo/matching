@@ -107,6 +107,9 @@ const StyledHome = styled.section`
 
 const StyledHomeTitle = styled.h1`
   margin-top: 30px;
+  @media screen and (max-width: 767px) {
+    font-size: 20px;
+  }
 `;
 
 const StyledHomeInner = styled.div`
@@ -126,6 +129,12 @@ const StyledUserNameArea = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
+  h2 {
+    @media screen and (max-width: 767px) {
+      font-size: 25px;
+      margin: 0;
+    }
+  }
   input {
     width: 300px;
     height: 30px;
@@ -138,6 +147,9 @@ const StyledUserNameArea = styled.div`
     background-color: grey;
     color: white;
     margin: 0 auto;
+    @media screen and (max-width: 767px) {
+      margin-top: 10px;
+    }
   }
 `;
 
@@ -149,11 +161,19 @@ const StyledUserImageArea = styled.div`
   background-color: pink;
   margin-bottom: 30px;
   box-shadow: 0px 1px 20px 4px black;
+  @media screen and (max-width: 767px) {
+    width: 250px;
+    height: 250px;
+  }
   img {
     width: 300px;
     height: 300px;
     border-radius: 200px;
     object-fit: cover;
+    @media screen and (max-width: 767px) {
+      width: 200px;
+      height: 200px;
+    }
   }
 `;
 
@@ -173,6 +193,10 @@ const StyledNothingButton = styled.button`
   width: 400px;
   height: 50px;
   background-color: grey;
+  @media screen and (max-width: 767px) {
+    width: 350px;
+    margin-bottom: 50px;
+  }
   :hover {
     opacity: 1;
   }
@@ -185,5 +209,5 @@ const StyledStartButton = styled.button`
   width: 300px;
   height: 50px;
   background-color: #4dff52;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 `;
