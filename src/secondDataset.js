@@ -117,7 +117,7 @@ const secondDataset = {
 
   crazy: {
     answers: [{ content: "", nextId: "" }],
-    girlanswer: "あん？テメェの血液、牛乳で全入れ替えしてやろうか💢",
+    girlanswer: "あん？テメェの血液、牛乳で全入れ替えしてやろか💢",
   },
   disgusting: {
     answers: [{ content: "", nextId: "" }],

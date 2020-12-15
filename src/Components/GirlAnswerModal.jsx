@@ -38,7 +38,7 @@ const GirlAnswerModal = (props) => {
           {props.selectJudgment === "correct" ? (
             <div>
               {level === 3 ? (
-                <p>すべての女性を落とすことに成功しました</p>
+                <p>すべての女の子を落とすことに成功しました</p>
               ) : (
                 <p>デートの誘いに成功しました！</p>
               )}
@@ -96,7 +96,6 @@ export default GirlAnswerModal;
 
 const StyledModal = styled(Modal)`
   width: 400px;
-  height: 550px;
 `;
 
 const StyledModalDescription = styled.div`

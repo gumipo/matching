@@ -69,8 +69,16 @@ const GirlsSelect = () => {
               <img src={girlImage} />
             </StyledCardHeader>
             <StyledCardBottom>
-              <p>{`ニックネーム: ${girlName}  (${girlAge})`}</p>
-              <p>住んでるところ: {girlAddress}</p>
+              <p>
+                {`ニックネーム`}
+                <br />
+                {`${girlName}  (${girlAge})`}
+              </p>
+              <p>
+                住んでるところ
+                <br />
+                {girlAddress}
+              </p>
               <h3>コメント</h3>
               <p>{girlDescription}</p>
             </StyledCardBottom>
@@ -119,7 +127,7 @@ const StyledCardHeader = styled.div`
   img {
     border-radius: 10px 10px 0 0;
     width: 450px;
-    height: 450px;
+    height: 350px;
     object-fit: cover;
     @media screen and (max-width: 767px) {
       width: 320px;
