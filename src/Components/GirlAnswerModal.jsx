@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 import { isReplayAction, resetGirlAction } from "../Redux/Girls/actions";
 import { getGirlLevel } from "../Redux/Girls/selector";
+import styles from "./modal.css.js";
 
 Modal.setAppElement("#root");
 
