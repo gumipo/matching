@@ -30,12 +30,20 @@ const StyledChatContainer = styled.div`
   width: 1000px;
   margin-top: 10px;
   display: flex;
+  @media screen and (max-width: 767px) {
+    width: 350px;
+  }
 `;
 const StyledChatWrapin = styled.div`
   width: 600px;
   display: flex;
   align-items: center;
   border-radius: 25px;
+  @media screen and (max-width: 767px) {
+    width: 300px;
+    height: 50px;
+    font-size: 14px;
+  }
 `;
 
 const StyledChatImage = styled.img`
@@ -43,4 +51,8 @@ const StyledChatImage = styled.img`
   height: 50px;
   border-radius: 25px;
   margin: 10px;
+  @media screen and (max-width: 767px) {
+    width: 30px;
+    height: 30px;
+  }
 `;
