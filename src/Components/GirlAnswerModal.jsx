@@ -38,7 +38,11 @@ const GirlAnswerModal = (props) => {
           {props.selectJudgment === "correct" ? (
             <div>
               {level === 3 ? (
-                <p>すべての女の子を落とすことに成功しました</p>
+                <p>
+                  すべての女の子を落とすことに
+                  <br />
+                  成功しました
+                </p>
               ) : (
                 <p>デートの誘いに成功しました！</p>
               )}

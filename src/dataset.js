@@ -37,7 +37,7 @@ const dataset = {
       { content: "ニートで毎日家にいます", nextId: "neet" },
       { content: "ラブホのトイレ掃除の仕事してます", nextId: "lovehotel" },
     ],
-    girlanswer: "私はキャバクラで今バイトしてます。userNameさんは?",
+    girlanswer: "私は今、キャバクラでバイトしてますよ。userNameさんは?",
   },
   line: {
     answers: [{ content: "", nextId: "" }],
