@@ -100,6 +100,9 @@ export default GirlAnswerModal;
 
 const StyledModal = styled(Modal)`
   width: 400px;
+  @media screen and (max-width: 767px) {
+    width: 350px;
+  }
 `;
 
 const StyledModalDescription = styled.div`

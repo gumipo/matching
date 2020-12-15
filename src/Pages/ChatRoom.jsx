@@ -159,7 +159,7 @@ const ChatRoom = () => {
 export default ChatRoom;
 
 const StyledSection = styled.div`
-  width: 1200px;
+  width: 65vw;
   min-height: 100vh;
   margin: 0 auto;
   text-align: center;
