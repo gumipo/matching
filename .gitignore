@@ -24,7 +24,7 @@ yarn-error.log*
 
 *.env
 
-#dataset
+#dataset-list
 src/dataset.js
 src/secondDataset.js
 src/thirdDataset.js
