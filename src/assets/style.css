@@ -1,0 +1,46 @@
+body {
+  background-image: linear-gradient(
+      45deg,
+      pink 25%,
+      pink 25%,
+      rgba(0 0 0 / 0) 25%,
+      rgba(0 0 0 / 0) 75%,
+      pink 75%,
+      pink 75%
+    ),
+    linear-gradient(
+      -45deg,
+      pink 25%,
+      pink 25%,
+      rgba(0 0 0 / 0) 25%,
+      rgba(0 0 0 / 0) 75%,
+      pink 75%,
+      pink 75%
+    );
+  background-size: 50px 50px;
+}
+
+@media screen and (max-width: 767px) {
+  body {
+    background-image: none;
+  }
+}
+
+button:hover {
+  opacity: 0.7;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+input::placeholder {
+  color: grey;
+  opacity: 0.4;
+}
