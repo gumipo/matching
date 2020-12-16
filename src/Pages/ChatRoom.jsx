@@ -183,5 +183,6 @@ const Wrap = styled.div`
   padding: 0;
   @media screen and (max-width: 767px) {
     width: 350px;
+    height: 57vh;
   }
 `;
